@@ -1,9 +1,11 @@
 import HeroHome from "./components/Home/Hero";
 import CustomerLogo from "./components/Home/CustomerLogo";
-import SocialProof from "./components/Home/SocialProof";
+import StatsSection from "./components/Home/StatsSection";
 import BenefitsGrid from "./components/Home/BenefitsGrid";
-import FinalCta from "./components/Home/FinalCta";
+import SocialProof from "./components/Home/SocialProof";
+import ComparisonSection from "./components/Home/ComparisonSection";
 import Historic from "./components/Home/Historic";
+import FinalCta from "./components/Home/FinalCta";
 
 export default function Home() {
   return (
@@ -11,9 +13,11 @@ export default function Home() {
       <main className="">
         <HeroHome />
         <CustomerLogo />
-        <SocialProof />
-        <Historic />
+        <StatsSection />
         <BenefitsGrid />
+        <SocialProof />
+        <ComparisonSection />
+        <Historic />
         <FinalCta />
       </main>
     </div>

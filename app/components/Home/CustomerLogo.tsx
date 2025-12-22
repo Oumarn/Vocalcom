@@ -20,41 +20,5 @@ const companies = [
 ];
 
 export default function CustomerLogo() {
-  return (
-    <section className="py-12 bg-[#F8FAFC] border-b border-slate-100 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 mb-8 lg:mb-10 text-center">
-        <p className="text-xl lg:text-3xl font-bold text-slate-900">
-          Ils nous font confiance :
-        </p>
-      </div>
-
-      <div className="infinite-scroll-container">
-        <div className="infinite-scroll">
-          {/* liste originale */}
-          <div className="logos gap-10 md:gap-14 lg:gap-16">
-            {companies.map((company, idx) => (
-              <img
-                key={idx}
-                src={company.image}
-                alt={company.name}
-                className={company.class}
-              />
-            ))}
-          </div>
-
-          {/* clone */}
-          <div className="logos gap-10 md:gap-14 lg:gap-16" aria-hidden="true">
-            {companies.map((company, idx) => (
-              <img
-                key={`clone-${idx}`}
-                src={company.image}
-                alt=""
-                className={company.class}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+  return null;
 }
