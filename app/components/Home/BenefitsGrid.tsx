@@ -36,8 +36,8 @@ export default function BenefitsGrid() {
                         <div className="group relative p-8 rounded-2xl bg-gradient-to-br from-green-50 to-white border-2 border-green-100 hover:border-green-300 hover:shadow-xl transition-all duration-300 overflow-hidden">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-400/10 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
                             <div className="relative">
-                                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-green-600 text-white flex items-center justify-center mb-5 group-hover:scale-110 transition-transform shadow-lg">
-                                    <Icon path={mdiAutoFix} size={1.2} />
+                                <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center mb-5 group-hover:scale-110 transition-transform shadow-lg p-2">
+                                    <Image src="/image copy 3.png" alt="Automation" width={48} height={48} className="w-full h-full object-contain" unoptimized />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">Automatisation Intelligente Revenue</h3>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-4">Anticipez le churn, automatisez l'upsell et cross-sell, boostez la conversion sur leads avec l'IA prédictive.</p>
