@@ -16,20 +16,20 @@ export default function ComparisonSection() {
                         </p>
                     </div>
 
-                    <div className="max-w-5xl mx-auto">
-                        <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl shadow-xl border-2 border-gray-100 overflow-hidden">
+                    <div className="max-w-5xl mx-auto overflow-x-auto">
+                        <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl shadow-xl border-2 border-gray-100 overflow-hidden min-w-[600px]">
                             {/* Header */}
-                            <div className="grid grid-cols-3 gap-6 p-6 border-b-2 border-gray-200" style={{background: 'linear-gradient(90deg, rgba(0, 191, 195, 0.1), rgba(144, 75, 153, 0.1))'}}>
+                            <div className="grid grid-cols-3 gap-4 md:gap-6 p-4 md:p-6 border-b-2 border-gray-200" style={{background: 'linear-gradient(90deg, rgba(0, 191, 195, 0.1), rgba(144, 75, 153, 0.1))'}}>
                                 <div className="text-center">
-                                    <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Fonctionnalité</p>
+                                    <p className="text-xs md:text-sm font-semibold text-gray-600 uppercase tracking-wide">Fonctionnalité</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="inline-flex items-center justify-center px-4 py-2 text-white rounded-full font-bold text-sm shadow-lg" style={{background: 'linear-gradient(193deg, #00bfc3, #4488af 40%, #904b99)'}}>
-                                        ⚡ Vocalcom AI
+                                    <div className="inline-flex items-center justify-center px-3 md:px-4 py-1.5 md:py-2 text-white rounded-full font-bold text-xs md:text-sm shadow-lg" style={{background: 'linear-gradient(193deg, #00bfc3, #4488af 40%, #904b99)'}}>
+                                        ⚡ Vocalcom
                                     </div>
                                 </div>
                                 <div className="text-center">
-                                    <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Solutions Legacy</p>
+                                    <p className="text-xs md:text-sm font-semibold text-gray-500 uppercase tracking-wide">Solutions Legacy</p>
                                 </div>
                             </div>
 
@@ -43,30 +43,30 @@ export default function ComparisonSection() {
                                     { feature: "Intégrations API ouvertes", vocalcom: "200+", legacy: "Limitées" },
                                     { feature: "Support 24/7", vocalcom: true, legacy: "Limité" },
                                 ].map((row, idx) => (
-                                    <div key={idx} className="grid grid-cols-3 gap-6 p-6 hover:bg-blue-50/30 transition-colors">
+                                    <div key={idx} className="grid grid-cols-3 gap-4 md:gap-6 p-4 md:p-6 hover:bg-blue-50/30 transition-colors">
                                         <div className="flex items-center">
-                                            <p className="text-gray-700 font-medium">{row.feature}</p>
+                                            <p className="text-sm md:text-base text-gray-700 font-medium">{row.feature}</p>
                                         </div>
                                         <div className="flex items-center justify-center">
                                             {typeof row.vocalcom === 'boolean' ? (
                                                 row.vocalcom ? (
-                                                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                                                        <Icon path={mdiCheck} size={1} className="text-green-600" />
+                                                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
+                                                        <Icon path={mdiCheck} size={0.8} className="md:w-6 md:h-6 text-green-600" />
                                                     </div>
                                                 ) : (
-                                                    <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
-                                                        <Icon path={mdiClose} size={1} className="text-red-600" />
+                                                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-red-100 flex items-center justify-center">
+                                                        <Icon path={mdiClose} size={0.8} className="md:w-6 md:h-6 text-red-600" />
                                                     </div>
                                                 )
                                             ) : (
-                                                <span className="text-blue-600 font-bold">{row.vocalcom}</span>
+                                                <span className="text-sm md:text-base text-blue-600 font-bold">{row.vocalcom}</span>
                                             )}
                                         </div>
                                         <div className="flex items-center justify-center">
                                             {typeof row.legacy === 'boolean' ? (
                                                 row.legacy ? (
-                                                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                                                        <Icon path={mdiCheck} size={1} className="text-green-600" />
+                                                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
+                                                        <Icon path={mdiCheck} size={0.8} className="md:w-6 md:h-6 text-green-600" />
                                                     </div>
                                                 ) : (
                                                     <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
