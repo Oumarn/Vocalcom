@@ -40,7 +40,7 @@ export default function ComparisonSection() {
                                     { feature: "Omnicanal natif (15+ canaux)", vocalcom: true, legacy: "Limité" },
                                     { feature: "Tarification transparente", vocalcom: true, legacy: false },
                                     { feature: "Analytics temps réel", vocalcom: true, legacy: "Basique" },
-                                    { feature: "Intégrations API ouvertes", vocalcom: "100+", legacy: "Limitées" },
+                                    { feature: "Intégrations API ouvertes", vocalcom: "200+", legacy: "Limitées" },
                                     { feature: "Support 24/7", vocalcom: true, legacy: "Limité" },
                                 ].map((row, idx) => (
                                     <div key={idx} className="grid grid-cols-3 gap-6 p-6 hover:bg-blue-50/30 transition-colors">

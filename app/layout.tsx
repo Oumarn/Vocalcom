@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "La Plateforme de Centre de Contact IA Conçue pour l'Échelle",
-  description: "Vocalcom.ai unifie chaque canal, client et agent dans une plateforme IA native pour une CX plus rapide et humaine.",
+  description: "Vocalcom unifie chaque canal, client et agent dans une plateforme IA native pour une CX plus rapide et humaine.",
   icons: {
     icon: "/apple-touch-icon.png",
   },

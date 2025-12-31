@@ -14,7 +14,7 @@ export default function BenefitsGrid() {
                             Une plateforme unifiée, des possibilités infinies
                         </div>
                         <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-4">Du basique à l'innovation IA de pointe</h2>
-                        <p className="text-lg text-gray-600">Vocalcom.ai réunit tout ce dont vous avez besoin dans une plateforme unique : agents IA, humains, et tous vos canaux pour une CX plus rapide et humaine.</p>
+                        <p className="text-lg text-gray-600">Vocalcom réunit tout ce dont vous avez besoin dans une plateforme unique : agents IA, humains, et tous vos canaux pour une CX plus rapide et humaine.</p>
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-up">
@@ -39,7 +39,7 @@ export default function BenefitsGrid() {
                                 <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center mb-5 group-hover:scale-110 transition-transform shadow-lg p-2">
                                     <Image src="/image copy 3.png" alt="Automation" width={48} height={48} className="w-full h-full object-contain" unoptimized />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">Automatisation Intelligente Revenue</h3>
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">Automatisation Intelligente</h3>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-4">Anticipez le churn, automatisez l'upsell et cross-sell, boostez la conversion sur leads avec l'IA prédictive.</p>
                                 <div className="flex items-center gap-2 text-green-600 font-semibold text-sm">
                                     <span className="text-2xl font-bold">+35%</span>
@@ -69,7 +69,7 @@ export default function BenefitsGrid() {
                                 <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center mb-5 group-hover:scale-110 transition-transform shadow-lg p-2">
                                     <Image src="/image copy 2.png" alt="AI" width={48} height={48} className="w-full h-full object-contain" unoptimized />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">Plateforme Native IA</h3>
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">Plateforme AI-First</h3>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-4">Unifiez chaque canal, client et agent dans une seule plateforme construite pour évoluer avec vous.</p>
                                 <div className="flex items-center gap-2 text-orange-600 font-semibold text-sm">
                                     <span className="text-2xl font-bold">1</span>
@@ -81,16 +81,6 @@ export default function BenefitsGrid() {
 
                     {/* Platform capabilities */}
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 animate-fade-up">
-                        <div className="flex items-start gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-blue-200 hover:shadow-md transition-all">
-                            <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
-                                <Icon path={mdiPhoneInTalk} size={0.9} className="text-blue-600" />
-                            </div>
-                            <div>
-                                <h4 className="font-semibold text-gray-900 mb-1">Inbound & Outbound</h4>
-                                <p className="text-xs text-gray-600">Campagnes sortantes et gestion des appels entrants unifiées</p>
-                            </div>
-                        </div>
-
                         <div className="flex items-start gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-blue-200 hover:shadow-md transition-all">
                             <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
                                 <Icon path={mdiForumOutline} size={0.9} className="text-purple-600" />
@@ -107,27 +97,7 @@ export default function BenefitsGrid() {
                             </div>
                             <div>
                                 <h4 className="font-semibold text-gray-900 mb-1">AI-Ready</h4>
-                                <p className="text-xs text-gray-600">Architecture prête pour l'IA générative et agents autonomes</p>
-                            </div>
-                        </div>
-
-                        <div className="flex items-start gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-blue-200 hover:shadow-md transition-all">
-                            <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
-                                <Icon path={mdiConnection} size={0.9} className="text-green-600" />
-                            </div>
-                            <div>
-                                <h4 className="font-semibold text-gray-900 mb-1">Intégration CRM</h4>
-                                <p className="text-xs text-gray-600">Connecteurs natifs pour tous vos outils métier</p>
-                            </div>
-                        </div>
-
-                        <div className="flex items-start gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-blue-200 hover:shadow-md transition-all">
-                            <div className="w-10 h-10 rounded-lg bg-sky-100 flex items-center justify-center flex-shrink-0">
-                                <Icon path={mdiSalesforce} size={0.9} className="text-sky-600" />
-                            </div>
-                            <div>
-                                <h4 className="font-semibold text-gray-900 mb-1">Native Salesforce</h4>
-                                <p className="text-xs text-gray-600">Solution certifiée Salesforce AppExchange</p>
+                                <p className="text-xs text-gray-600">Architecture prête pour l'IA Agentic et agents autonomes</p>
                             </div>
                         </div>
 

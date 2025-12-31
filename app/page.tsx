@@ -1,6 +1,9 @@
 import HeroHome from "./components/Home/Hero";
+import LogoBillboard from "./components/Home/LogoBillboard";
 import StatsSection from "./components/Home/StatsSection";
 import BenefitsGrid from "./components/Home/BenefitsGrid";
+import Integrations from "./components/Home/Integrations";
+import SecurityCompliance from "./components/Home/SecurityCompliance";
 import SocialProof from "./components/Home/SocialProof";
 import ComparisonSection from "./components/Home/ComparisonSection";
 import Historic from "./components/Home/Historic";
@@ -11,8 +14,10 @@ export default function Home() {
     <div className="">
       <main className="">
         <HeroHome />
-        <StatsSection />
+        <LogoBillboard />
         <BenefitsGrid />
+        <Integrations />
+        <SecurityCompliance />
         <SocialProof />
         <ComparisonSection />
         <Historic />

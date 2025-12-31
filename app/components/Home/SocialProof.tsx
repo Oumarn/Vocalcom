@@ -143,59 +143,6 @@ export default function SocialProof() {
                             </div>
                         </div>
                     </div>
-
-                    {/* Trust badges */}
-                    <div className="mt-16 pt-12 border-t border-gray-200 animate-fade-up">
-                        <div className="text-center mb-8">
-                            <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Ils nous font confiance</p>
-                        </div>
-                        <div className="overflow-hidden relative">
-                            {/* Spotlight highlight */}
-                            <div className="absolute inset-0 pointer-events-none z-10">
-                                <div className="absolute top-0 bottom-0 w-1/4 bg-gradient-to-r from-transparent via-white/30 to-transparent blur-xl" 
-                                     style={{ animation: 'spotlight 8s linear infinite' }}>
-                                </div>
-                            </div>
-                            <div className="flex animate-scroll">
-                                {/* First set of logos */}
-                                <div className="flex items-center gap-12 px-6 shrink-0">
-                                    <img src="/assets/AXA_Logo.svg" alt="AXA" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/bouygues.png" alt="Bouygues" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/Vinci_Unternehmen_logo.svg" alt="Vinci" className="h-10 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/renault.svg" alt="Renault" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/mcdonalds.svg" alt="McDonald's" className="h-10 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/Monogramme_Nespresso.png" alt="Nespresso" className="h-10 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/armatis.png" alt="Armatis" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/anheuse.svg" alt="Anheuser-Busch" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/abu_dhabi.svg" alt="Abu Dhabi" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/mm.png" alt="M&M's" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/mauritius.jpg" alt="Mauritius" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/Logo_fcbarcelone.png" alt="FC Barcelona" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/Logo_Bioderma.png" alt="Bioderma" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/The-Petroleum-Institute.png" alt="Petroleum Institute" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/majid.png" alt="Majid" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                </div>
-                                {/* Duplicate set for seamless loop */}
-                                <div className="flex items-center gap-12 px-6 shrink-0">
-                                    <img src="/assets/AXA_Logo.svg" alt="AXA" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/bouygues.png" alt="Bouygues" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/Vinci_Unternehmen_logo.svg" alt="Vinci" className="h-10 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/renault.svg" alt="Renault" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/mcdonalds.svg" alt="McDonald's" className="h-10 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/Monogramme_Nespresso.png" alt="Nespresso" className="h-10 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/armatis.png" alt="Armatis" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/anheuse.svg" alt="Anheuser-Busch" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/abu_dhabi.svg" alt="Abu Dhabi" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/mm.png" alt="M&M's" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/mauritius.jpg" alt="Mauritius" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/Logo_fcbarcelone.png" alt="FC Barcelona" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/Logo_Bioderma.png" alt="Bioderma" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/The-Petroleum-Institute.png" alt="Petroleum Institute" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                    <img src="/assets/majid.png" alt="Majid" className="h-8 object-contain grayscale hover:grayscale-0 transition-all" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
 
