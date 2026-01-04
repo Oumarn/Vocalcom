@@ -51,7 +51,7 @@ export default function Historic() {
     return (
         <section
             ref={sectionRef}
-            className="bg-linear relative py-20 lg:py-24 px-4 lg:px-0"
+            className="bg-linear relative py-12 lg:py-16 px-4 lg:px-0"
             id="historics"
         >
             <div className="shape-layer"></div>

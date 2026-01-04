@@ -1,4 +1,5 @@
 import HeroHome from "./components/Home/Hero";
+import AIHumanSection from "./components/Home/AIHumanSection";
 import LogoBillboard from "./components/Home/LogoBillboard";
 import StatsSection from "./components/Home/StatsSection";
 import BenefitsGrid from "./components/Home/BenefitsGrid";
@@ -15,10 +16,11 @@ export default function Home() {
       <main className="">
         <HeroHome />
         <LogoBillboard />
+        <AIHumanSection />
         <BenefitsGrid />
         <Integrations />
-        <SecurityCompliance />
         <SocialProof />
+        <SecurityCompliance />
         <ComparisonSection />
         <Historic />
         <FinalCta />

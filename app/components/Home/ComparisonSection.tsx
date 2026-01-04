@@ -5,14 +5,20 @@ import { mdiCheck, mdiClose } from '@mdi/js';
 export default function ComparisonSection() {
     return (
         <>
-            <section className="py-20 lg:py-24 bg-white">
+            <section className="py-12 lg:py-16 bg-white">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-16 max-w-3xl mx-auto animate-fade-up">
+                        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-50 to-orange-50 text-purple-700 rounded-full px-5 py-2.5 text-sm font-bold mb-6 border border-purple-200">
+                            <span>Nouvelle ère, nouveaux agents, mêmes valeurs</span>
+                        </div>
                         <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-4">
                             Vocalcom vs Solutions Traditionnelles
                         </h2>
-                        <p className="text-lg text-gray-600">
+                        <p className="text-lg text-gray-600 mb-3">
                             Découvrez pourquoi les entreprises migrent vers notre plateforme AI-native
+                        </p>
+                        <p className="text-base text-gray-600 leading-relaxed">
+                            Du suivi immédiat de chaque lead au service client qui fournit son expertise 24/7, ensemble, humains et agents IA sont les moteurs de votre réussite. À la clé, un réel retour sur investissement, les chiffres le prouvent.
                         </p>
                     </div>
 

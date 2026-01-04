@@ -5,7 +5,7 @@ import { mdiArrowRight, mdiCheckCircle, mdiClockOutline } from '@mdi/js';
 export default function FinalCta() {
     return (
         <>
-            <section className="py-24 relative overflow-hidden bg-white">
+            <section className="py-16 relative overflow-hidden bg-white">
                 <div className="absolute inset-0 z-0 opacity-5" style={{background: 'linear-gradient(193deg, #00bfc3, #4488af 40%, #904b99)'}}></div>
                 {/* Animated background */}
                 <div className="absolute inset-0 opacity-20">
@@ -15,11 +15,14 @@ export default function FinalCta() {
                 </div>
 
                 <div className="relative z-10 max-w-5xl mx-auto px-6 text-center animate-fade-up">
+                    <div className="inline-flex items-center gap-2 text-2xl mb-4">
+                        <span>🚀</span>
+                    </div>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6 leading-tight">
-                        Prêt à Révolutionner Votre CX?
+                        Prenez une longueur d'avance sur la concurrence
                     </h2>
                     <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-                        Rejoignez 1200+ entreprises qui transforment leur expérience client avec l'IA
+                        Rejoignez 1200+ entreprises qui transforment leur expérience client avec le centre de contact AI-first de Vocalcom
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">

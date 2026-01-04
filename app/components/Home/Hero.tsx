@@ -5,7 +5,7 @@ import DemoForm from '../forms/DemoForm';
 export default function HeroHome() {
     return (
         <>
-            <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-to-br from-white via-cyan-50/30 to-purple-50/20">
+            <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden bg-gradient-to-br from-white via-cyan-50/30 to-purple-50/20">
                 
                 {/* Image Background */}
                 <div className="absolute inset-0 overflow-hidden">

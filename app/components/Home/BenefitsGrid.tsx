@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function BenefitsGrid() {
     return (
         <>
-            <section className="py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+            <section className="py-12 lg:py-16 bg-gradient-to-b from-gray-50 to-white">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-16 max-w-3xl mx-auto animate-fade-up">
                         <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 rounded-full px-4 py-2 text-sm font-medium mb-4">

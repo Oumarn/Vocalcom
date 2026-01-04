@@ -11,7 +11,7 @@ export default function StatsSection() {
 
     return (
         <>
-            <section className="py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50">
+            <section className="py-12 lg:py-16 bg-gradient-to-b from-white to-gray-50">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid md:grid-cols-4 gap-8">
                         <div className="text-center group hover:scale-105 transition-transform">
