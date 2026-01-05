@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Icon from "@mdi/react";
 import { mdiArrowRight, mdiCheck, mdiArrowLeft, mdiEmailOutline, mdiAccountOutline, mdiOfficeBuilding, mdiPhone, mdiEarth } from "@mdi/js";
@@ -10,10 +10,14 @@ export default function DemoForm() {
     const [step, setStep] = useState(1);
     const [loading, setLoading] = useState(false);
     const [sendDatas, setSendDatas] = useState(false);
+    const [countrySearch, setCountrySearch] = useState("");
+    const [showCountryDropdown, setShowCountryDropdown] = useState(false);
+    const countryInputRef = useRef<HTMLInputElement>(null);
     const [form, setForm] = useState({
         email: "",
         firstName: "",
         lastName: "",
+        jobTitle: "",
         company: "",
         phone: "",
         country: ""
@@ -23,6 +27,7 @@ export default function DemoForm() {
         email: "",
         firstName: "",
         lastName: "",
+        jobTitle: "",
         company: "",
         phone: "",
         country: ""
@@ -30,16 +35,102 @@ export default function DemoForm() {
 
     const totalSteps = 3;
     
+    // Country code mapping
+    const countryCodeMap: {[key: string]: string} = {
+        "Afghanistan": "+93", "Afrique du Sud": "+27", "Albanie": "+355", "Algérie": "+213", "Allemagne": "+49", "Andorre": "+376", "Angola": "+244", "Antigua-et-Barbuda": "+1-268", "Arabie Saoudite": "+966", "Argentine": "+54", "Arménie": "+374", "Australie": "+61", "Autriche": "+43", "Azerbaïdjan": "+994",
+        "Bahamas": "+1-242", "Bahreïn": "+973", "Bangladesh": "+880", "Barbade": "+1-246", "Belgique": "+32", "Belize": "+501", "Bénin": "+229", "Bhoutan": "+975", "Biélorussie": "+375", "Birmanie": "+95", "Bolivie": "+591", "Bosnie-Herzégovine": "+387", "Botswana": "+267", "Brésil": "+55", "Brunei": "+673", "Bulgarie": "+359", "Burkina Faso": "+226", "Burundi": "+257",
+        "Cambodge": "+855", "Cameroun": "+237", "Canada": "+1", "Cap-Vert": "+238", "Chili": "+56", "Chine": "+86", "Chypre": "+357", "Colombie": "+57", "Comores": "+269", "Congo": "+242", "Corée du Nord": "+850", "Corée du Sud": "+82", "Costa Rica": "+506", "Côte d'Ivoire": "+225", "Croatie": "+385", "Cuba": "+53",
+        "Danemark": "+45", "Djibouti": "+253", "Dominique": "+1-767",
+        "Égypte": "+20", "Émirats Arabes Unis": "+971", "Équateur": "+593", "Érythrée": "+291", "Espagne": "+34", "Estonie": "+372", "Eswatini": "+268", "États-Unis": "+1", "Éthiopie": "+251",
+        "Fidji": "+679", "Finlande": "+358", "France": "+33",
+        "Gabon": "+241", "Gambie": "+220", "Géorgie": "+995", "Ghana": "+233", "Grèce": "+30", "Grenade": "+1-473", "Guatemala": "+502", "Guinée": "+224", "Guinée-Bissau": "+245", "Guinée Équatoriale": "+240", "Guyana": "+592",
+        "Haïti": "+509", "Honduras": "+504", "Hongrie": "+36",
+        "Îles Marshall": "+692", "Îles Salomon": "+677", "Inde": "+91", "Indonésie": "+62", "Irak": "+964", "Iran": "+98", "Irlande": "+353", "Islande": "+354", "Israël": "+972", "Italie": "+39",
+        "Jamaïque": "+1-876", "Japon": "+81", "Jordanie": "+962",
+        "Kazakhstan": "+7", "Kenya": "+254", "Kirghizistan": "+996", "Kiribati": "+686", "Koweït": "+965",
+        "Laos": "+856", "Lesotho": "+266", "Lettonie": "+371", "Liban": "+961", "Liberia": "+231", "Libye": "+218", "Liechtenstein": "+423", "Lituanie": "+370", "Luxembourg": "+352",
+        "Macédoine du Nord": "+389", "Madagascar": "+261", "Malaisie": "+60", "Malawi": "+265", "Maldives": "+960", "Mali": "+223", "Malte": "+356", "Maroc": "+212", "Maurice": "+230", "Mauritanie": "+222", "Mexique": "+52", "Micronésie": "+691", "Moldavie": "+373", "Monaco": "+377", "Mongolie": "+976", "Monténégro": "+382", "Mozambique": "+258",
+        "Namibie": "+264", "Nauru": "+674", "Népal": "+977", "Nicaragua": "+505", "Niger": "+227", "Nigeria": "+234", "Norvège": "+47", "Nouvelle-Zélande": "+64",
+        "Oman": "+968", "Ouganda": "+256", "Ouzbékistan": "+998",
+        "Pakistan": "+92", "Palaos": "+680", "Palestine": "+970", "Panama": "+507", "Papouasie-Nouvelle-Guinée": "+675", "Paraguay": "+595", "Pays-Bas": "+31", "Pérou": "+51", "Philippines": "+63", "Pologne": "+48", "Portugal": "+351",
+        "Qatar": "+974",
+        "République Centrafricaine": "+236", "République Démocratique du Congo": "+243", "République Dominicaine": "+1-809", "République Tchèque": "+420", "Roumanie": "+40", "Royaume-Uni": "+44", "Russie": "+7", "Rwanda": "+250",
+        "Saint-Christophe-et-Niévès": "+1-869", "Sainte-Lucie": "+1-758", "Saint-Marin": "+378", "Saint-Vincent-et-les-Grenadines": "+1-784", "Salvador": "+503", "Samoa": "+685", "São Tomé-et-Principe": "+239", "Sénégal": "+221", "Serbie": "+381", "Seychelles": "+248", "Sierra Leone": "+232", "Singapour": "+65", "Slovaquie": "+421", "Slovénie": "+386", "Somalie": "+252", "Soudan": "+249", "Soudan du Sud": "+211", "Sri Lanka": "+94", "Suède": "+46", "Suisse": "+41", "Suriname": "+597", "Syrie": "+963",
+        "Tadjikistan": "+992", "Tanzanie": "+255", "Tchad": "+235", "Thaïlande": "+66", "Timor Oriental": "+670", "Togo": "+228", "Tonga": "+676", "Trinité-et-Tobago": "+1-868", "Tunisie": "+216", "Turkménistan": "+993", "Turquie": "+90", "Tuvalu": "+688",
+        "Ukraine": "+380", "Uruguay": "+598",
+        "Vanuatu": "+678", "Vatican": "+39", "Venezuela": "+58", "Viêt Nam": "+84",
+        "Yémen": "+967",
+        "Zambie": "+260", "Zimbabwe": "+263"
+    };
+    
     const countries = [
-        "France", "Belgique", "Suisse", "Canada", "Luxembourg",
-        "Maroc", "Tunisie", "Algérie", "Sénégal", "Côte d'Ivoire",
-        "Autre"
+        "Afghanistan", "Afrique du Sud", "Albanie", "Algérie", "Allemagne", "Andorre", "Angola", "Antigua-et-Barbuda", "Arabie Saoudite", "Argentine", "Arménie", "Australie", "Autriche", "Azerbaïdjan",
+        "Bahamas", "Bahreïn", "Bangladesh", "Barbade", "Belgique", "Belize", "Bénin", "Bhoutan", "Biélorussie", "Birmanie", "Bolivie", "Bosnie-Herzégovine", "Botswana", "Brésil", "Brunei", "Bulgarie", "Burkina Faso", "Burundi",
+        "Cambodge", "Cameroun", "Canada", "Cap-Vert", "Chili", "Chine", "Chypre", "Colombie", "Comores", "Congo", "Corée du Nord", "Corée du Sud", "Costa Rica", "Côte d'Ivoire", "Croatie", "Cuba",
+        "Danemark", "Djibouti", "Dominique",
+        "Égypte", "Émirats Arabes Unis", "Équateur", "Érythrée", "Espagne", "Estonie", "Eswatini", "États-Unis", "Éthiopie",
+        "Fidji", "Finlande", "France",
+        "Gabon", "Gambie", "Géorgie", "Ghana", "Grèce", "Grenade", "Guatemala", "Guinée", "Guinée-Bissau", "Guinée Équatoriale", "Guyana",
+        "Haïti", "Honduras", "Hongrie",
+        "Îles Marshall", "Îles Salomon", "Inde", "Indonésie", "Irak", "Iran", "Irlande", "Islande", "Israël", "Italie",
+        "Jamaïque", "Japon", "Jordanie",
+        "Kazakhstan", "Kenya", "Kirghizistan", "Kiribati", "Koweït",
+        "Laos", "Lesotho", "Lettonie", "Liban", "Liberia", "Libye", "Liechtenstein", "Lituanie", "Luxembourg",
+        "Macédoine du Nord", "Madagascar", "Malaisie", "Malawi", "Maldives", "Mali", "Malte", "Maroc", "Maurice", "Mauritanie", "Mexique", "Micronésie", "Moldavie", "Monaco", "Mongolie", "Monténégro", "Mozambique",
+        "Namibie", "Nauru", "Népal", "Nicaragua", "Niger", "Nigeria", "Norvège", "Nouvelle-Zélande",
+        "Oman", "Ouganda", "Ouzbékistan",
+        "Pakistan", "Palaos", "Palestine", "Panama", "Papouasie-Nouvelle-Guinée", "Paraguay", "Pays-Bas", "Pérou", "Philippines", "Pologne", "Portugal",
+        "Qatar",
+        "République Centrafricaine", "République Démocratique du Congo", "République Dominicaine", "République Tchèque", "Roumanie", "Royaume-Uni", "Russie", "Rwanda",
+        "Saint-Christophe-et-Niévès", "Sainte-Lucie", "Saint-Marin", "Saint-Vincent-et-les-Grenadines", "Salvador", "Samoa", "São Tomé-et-Principe", "Sénégal", "Serbie", "Seychelles", "Sierra Leone", "Singapour", "Slovaquie", "Slovénie", "Somalie", "Soudan", "Soudan du Sud", "Sri Lanka", "Suède", "Suisse", "Suriname", "Syrie",
+        "Tadjikistan", "Tanzanie", "Tchad", "Thaïlande", "Timor Oriental", "Togo", "Tonga", "Trinité-et-Tobago", "Tunisie", "Turkménistan", "Turquie", "Tuvalu",
+        "Ukraine", "Uruguay",
+        "Vanuatu", "Vatican", "Venezuela", "Viêt Nam",
+        "Yémen",
+        "Zambie", "Zimbabwe"
     ];
+
+    // Filter countries based on search
+    const filteredCountries = countries.filter(country =>
+        country.toLowerCase().includes(countrySearch.toLowerCase())
+    );
+
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (countryInputRef.current && !countryInputRef.current.contains(event.target as Node)) {
+                setShowCountryDropdown(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
 
     // Vérification du format email
     const isValidEmail = (email: string) => {
         const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return regex.test(email);
+    };
+
+    const handleCountrySearch = (value: string) => {
+        setCountrySearch(value);
+        setShowCountryDropdown(true);
+        // Clear country selection if user is typing
+        if (form.country && !countries.includes(value)) {
+            setForm(prev => ({ ...prev, country: "" }));
+        }
+    };
+
+    const handleCountrySelect = (country: string) => {
+        const countryCode = countryCodeMap[country] || "";
+        setForm(prev => ({ 
+            ...prev, 
+            country,
+            phone: countryCode ? `${countryCode} ` : prev.phone
+        }));
+        setCountrySearch(country);
+        setShowCountryDropdown(false);
+        setErrors(prev => ({ ...prev, country: "" }));
     };
 
     const handleChange = (e: any) => {
@@ -78,10 +169,14 @@ export default function DemoForm() {
             if (!form.firstName.trim()) newErrors.firstName = "Veuillez entrer votre prénom.";
             if (!form.lastName.trim()) newErrors.lastName = "Veuillez entrer votre nom.";
         } else if (currentStep === 2) {
+            if (!form.jobTitle.trim()) newErrors.jobTitle = "Veuillez entrer votre fonction.";
             if (!form.company.trim()) newErrors.company = "Veuillez entrer le nom de votre société.";
-            if (!form.phone.trim()) newErrors.phone = "Veuillez entrer votre téléphone.";
-        } else if (currentStep === 3) {
             if (!form.country) newErrors.country = "Veuillez sélectionner votre pays.";
+        } else if (currentStep === 3) {
+            const phoneDigits = form.phone.replace(/\D/g, ''); // Remove all non-digits
+            if (!form.phone.trim() || phoneDigits.length < 8) {
+                newErrors.phone = "Veuillez entrer un numéro de téléphone valide.";
+            }
         }
 
         setErrors(newErrors);
@@ -100,30 +195,59 @@ export default function DemoForm() {
             email: "",
             firstName: "",
             lastName: "",
+            jobTitle: "",
             company: "",
             phone: "",
             country: ""
         });
     };
 
-    const handleSubmit = (e: any) => {
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
+        
+        // Only submit if we're on the last step
+        if (step !== totalSteps) {
+            return;
+        }
+        
         setSendDatas(false);
 
         if (!validateStep(step)) return;
 
         if (!validateStep(step)) return;
 
-        console.log("Formulaire valide :", form);
         setLoading(true);
 
-        // Simulation d'envoi API
-        setTimeout(() => {
+        try {
+            // Prepare form data for Pardot
+            const formData = new FormData();
+            formData.append('email', form.email);
+            formData.append('First Name', form.firstName);
+            formData.append('Last Name', form.lastName);
+            formData.append('Job Title', form.jobTitle);
+            formData.append('Company', form.company);
+            formData.append('Country', form.country);
+            formData.append('Phone Number', form.phone);
+
+            // Submit to Pardot form handler
+            const response = await fetch('https://go.vocalcom.com/l/1029911/2026-01-04/363cd', {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // Required for cross-origin form submission
+            });
+
             setLoading(false);
             setSendDatas(true);
-            // Redirect to thank you page
-            router.push('/thank-you');
-        }, 2000);
+            
+            // Redirect to success page
+            window.location.href = 'https://vocalcom.com/thank-you';
+            
+        } catch (error) {
+            console.error('Form submission error:', error);
+            setLoading(false);
+            // Still redirect on error since no-cors mode doesn't return response
+            window.location.href = 'https://vocalcom.com/thank-you';
+        }
     };
 
     return (
@@ -222,12 +346,36 @@ export default function DemoForm() {
                 </div>
             )}
 
-            {/* Step 2: Company Info */}
+            {/* Step 2: Job Title, Company & Country */}
             {step === 2 && (
                 <div className="space-y-4 animate-fade-in">
                     <div className="text-center mb-4">
                         <h4 className="text-base font-bold text-gray-900">Votre entreprise</h4>
                         <p className="text-xs text-gray-500 mt-1">Pour personnaliser votre démo</p>
+                    </div>
+
+                    <div>
+                        <label htmlFor="jobTitle" className={`block text-xs font-medium mb-1.5 ml-1 ${errors.jobTitle ? "text-red-500" : "text-gray-700"}`}>
+                            <div className="flex items-center gap-1.5">
+                                <Icon path={mdiAccountOutline} size={0.6} />
+                                Fonction
+                            </div>
+                        </label>
+                        <input
+                            type="text"
+                            id="jobTitle"
+                            value={form.jobTitle}
+                            onChange={handleChange}
+                            autoFocus
+                            className={`w-full px-4 py-3 bg-gray-50 border rounded-xl text-sm 
+                                focus:ring-2 focus:border-transparent outline-none transition-all
+                                ${errors.jobTitle ? "border-red-500 focus:ring-red-400" : "border-gray-200 focus:ring-[#24B7C3]"}
+                            `}
+                            placeholder="Directeur Service Client"
+                        />
+                        {errors.jobTitle && (
+                            <p className="text-red-500 text-xs mt-1 ml-1">⚠️ {errors.jobTitle}</p>
+                        )}
                     </div>
 
                     <div>
@@ -242,7 +390,6 @@ export default function DemoForm() {
                             id="company"
                             value={form.company}
                             onChange={handleChange}
-                            autoFocus
                             className={`w-full px-4 py-3 bg-gray-50 border rounded-xl text-sm 
                                 focus:ring-2 focus:border-transparent outline-none transition-all
                                 ${errors.company ? "border-red-500 focus:ring-red-400" : "border-gray-200 focus:ring-[#24B7C3]"}
@@ -252,6 +399,56 @@ export default function DemoForm() {
                         {errors.company && (
                             <p className="text-red-500 text-xs mt-1 ml-1">⚠️ {errors.company}</p>
                         )}
+                    </div>
+
+                    <div>
+                        <label htmlFor="country" className={`block text-xs font-medium mb-2 ml-1 ${errors.country ? "text-red-500" : "text-gray-700"}`}>
+                            <div className="flex items-center gap-1.5">
+                                <Icon path={mdiEarth} size={0.6} />
+                                Pays
+                            </div>
+                        </label>
+                        <div className="relative" ref={countryInputRef}>
+                            <input
+                                type="text"
+                                id="country"
+                                value={countrySearch}
+                                onChange={(e) => handleCountrySearch(e.target.value)}
+                                onFocus={() => setShowCountryDropdown(true)}
+                                autoComplete="off"
+                                className={`w-full px-4 py-3 bg-gray-50 border rounded-xl text-sm 
+                                    focus:ring-2 focus:border-transparent outline-none transition-all
+                                    ${errors.country ? "border-red-500 focus:ring-red-400" : "border-gray-200 focus:ring-[#24B7C3]"}
+                                `}
+                                placeholder="Rechercher votre pays..."
+                            />
+                            {showCountryDropdown && filteredCountries.length > 0 && (
+                                <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-xl shadow-lg max-h-60 overflow-y-auto">
+                                    {filteredCountries.map((country) => (
+                                        <div
+                                            key={country}
+                                            onClick={() => handleCountrySelect(country)}
+                                            className="px-4 py-2.5 text-sm hover:bg-cyan-50 cursor-pointer transition-colors border-b border-gray-100 last:border-b-0"
+                                        >
+                                            {country}
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                        {errors.country && (
+                            <p className="text-red-500 text-xs mt-1 ml-1">⚠️ {errors.country}</p>
+                        )}
+                    </div>
+                </div>
+            )}
+
+            {/* Step 3: Phone */}
+            {step === 3 && (
+                <div className="space-y-4 animate-fade-in">
+                    <div className="text-center mb-4">
+                        <h4 className="text-base font-bold text-gray-900">Dernière étape !</h4>
+                        <p className="text-xs text-gray-500 mt-1">Comment vous joindre ?</p>
                     </div>
 
                     <div>
@@ -266,6 +463,7 @@ export default function DemoForm() {
                             id="phone"
                             value={form.phone}
                             onChange={handleChange}
+                            autoFocus
                             className={`w-full px-4 py-3 bg-gray-50 border rounded-xl text-sm 
                                 focus:ring-2 focus:border-transparent outline-none transition-all
                                 ${errors.phone ? "border-red-500 focus:ring-red-400" : "border-gray-200 focus:ring-[#24B7C3]"}
@@ -274,43 +472,6 @@ export default function DemoForm() {
                         />
                         {errors.phone && (
                             <p className="text-red-500 text-xs mt-1 ml-1">⚠️ {errors.phone}</p>
-                        )}
-                    </div>
-                </div>
-            )}
-
-            {/* Step 3: Country */}
-            {step === 3 && (
-                <div className="space-y-4 animate-fade-in">
-                    <div className="text-center mb-4">
-                        <h4 className="text-base font-bold text-gray-900">Dernière étape !</h4>
-                        <p className="text-xs text-gray-500 mt-1">Où êtes-vous situé ?</p>
-                    </div>
-
-                    <div>
-                        <label htmlFor="country" className={`block text-xs font-medium mb-2 ml-1 ${errors.country ? "text-red-500" : "text-gray-700"}`}>
-                            <div className="flex items-center gap-1.5">
-                                <Icon path={mdiEarth} size={0.6} />
-                                Pays
-                            </div>
-                        </label>
-                        <select
-                            id="country"
-                            value={form.country}
-                            onChange={handleChange}
-                            autoFocus
-                            className={`w-full px-4 py-3 bg-gray-50 border rounded-xl text-sm 
-                                focus:ring-2 focus:border-transparent outline-none transition-all
-                                ${errors.country ? "border-red-500 focus:ring-red-400" : "border-gray-200 focus:ring-[#24B7C3]"}
-                            `}
-                        >
-                            <option value="">Sélectionnez votre pays</option>
-                            {countries.map((country) => (
-                                <option key={country} value={country}>{country}</option>
-                            ))}
-                        </select>
-                        {errors.country && (
-                            <p className="text-red-500 text-xs mt-1 ml-1">⚠️ {errors.country}</p>
                         )}
                     </div>
                 </div>
