@@ -263,11 +263,11 @@ export default function DemoForm() {
             <div className="mb-6">
                 <div className="flex justify-between items-center mb-2">
                     <span className="text-xs font-semibold text-gray-700">Étape {step}/{totalSteps}</span>
-                    <span className="text-xs font-medium text-[#24B7C3]">{Math.round((step / totalSteps) * 100)}%</span>
+                    <span className="text-xs font-medium text-[#8b5cf6]">{Math.round((step / totalSteps) * 100)}%</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
                     <div 
-                        className="bg-gradient-to-r from-[#1E75D9] to-[#24B7C3] h-2 rounded-full transition-all duration-500 ease-out"
+                        className="bg-gradient-to-r from-[#7c3aed] to-[#a855f7] h-2 rounded-full transition-all duration-500 ease-out"
                         style={{ width: `${(step / totalSteps) * 100}%` }}
                     ></div>
                 </div>
@@ -296,7 +296,7 @@ export default function DemoForm() {
                             autoFocus
                             className={`w-full px-4 py-3 bg-gray-50 border rounded-xl text-sm 
                                 focus:ring-2 focus:border-transparent outline-none transition-all
-                                ${errors.email ? "border-red-500 focus:ring-red-400" : "border-gray-200 focus:ring-[#24B7C3]"}
+                                ${errors.email ? "border-red-500 focus:ring-red-400" : "border-gray-200 focus:ring-[#8b5cf6]"}
                             `}
                             placeholder="jean@entreprise.com"
                         />
@@ -319,7 +319,7 @@ export default function DemoForm() {
                             onChange={handleChange}
                             className={`w-full px-4 py-3 bg-gray-50 border rounded-xl text-sm 
                                 focus:ring-2 focus:border-transparent outline-none transition-all
-                                ${errors.firstName ? "border-red-500 focus:ring-red-400" : "border-gray-200 focus:ring-[#24B7C3]"}
+                                ${errors.firstName ? "border-red-500 focus:ring-red-400" : "border-gray-200 focus:ring-[#8b5cf6]"}
                             `}
                             placeholder="Jean"
                         />
@@ -342,7 +342,7 @@ export default function DemoForm() {
                             onChange={handleChange}
                             className={`w-full px-4 py-3 bg-gray-50 border rounded-xl text-sm 
                                 focus:ring-2 focus:border-transparent outline-none transition-all
-                                ${errors.lastName ? "border-red-500 focus:ring-red-400" : "border-gray-200 focus:ring-[#24B7C3]"}
+                                ${errors.lastName ? "border-red-500 focus:ring-red-400" : "border-gray-200 focus:ring-[#8b5cf6]"}
                             `}
                             placeholder="Dupont"
                         />
@@ -376,7 +376,7 @@ export default function DemoForm() {
                             autoFocus
                             className={`w-full px-4 py-3 bg-gray-50 border rounded-xl text-sm 
                                 focus:ring-2 focus:border-transparent outline-none transition-all
-                                ${errors.jobTitle ? "border-red-500 focus:ring-red-400" : "border-gray-200 focus:ring-[#24B7C3]"}
+                                ${errors.jobTitle ? "border-red-500 focus:ring-red-400" : "border-gray-200 focus:ring-[#8b5cf6]"}
                             `}
                             placeholder="Directeur Service Client"
                         />
@@ -399,7 +399,7 @@ export default function DemoForm() {
                             onChange={handleChange}
                             className={`w-full px-4 py-3 bg-gray-50 border rounded-xl text-sm 
                                 focus:ring-2 focus:border-transparent outline-none transition-all
-                                ${errors.company ? "border-red-500 focus:ring-red-400" : "border-gray-200 focus:ring-[#24B7C3]"}
+                                ${errors.company ? "border-red-500 focus:ring-red-400" : "border-gray-200 focus:ring-[#8b5cf6]"}
                             `}
                             placeholder="Votre Société"
                         />
@@ -425,7 +425,7 @@ export default function DemoForm() {
                                 autoComplete="off"
                                 className={`w-full px-4 py-3 bg-gray-50 border rounded-xl text-sm 
                                     focus:ring-2 focus:border-transparent outline-none transition-all
-                                    ${errors.country ? "border-red-500 focus:ring-red-400" : "border-gray-200 focus:ring-[#24B7C3]"}
+                                    ${errors.country ? "border-red-500 focus:ring-red-400" : "border-gray-200 focus:ring-[#8b5cf6]"}
                                 `}
                                 placeholder="Rechercher votre pays..."
                             />
@@ -473,7 +473,7 @@ export default function DemoForm() {
                             autoFocus
                             className={`w-full px-4 py-3 bg-gray-50 border rounded-xl text-sm 
                                 focus:ring-2 focus:border-transparent outline-none transition-all
-                                ${errors.phone ? "border-red-500 focus:ring-red-400" : "border-gray-200 focus:ring-[#24B7C3]"}
+                                ${errors.phone ? "border-red-500 focus:ring-red-400" : "border-gray-200 focus:ring-[#8b5cf6]"}
                             `}
                             placeholder="+33 6 12 34 56 78"
                         />
@@ -501,7 +501,7 @@ export default function DemoForm() {
                     <button
                         type="button"
                         onClick={handleNext}
-                        className="flex-1 py-3 bg-gradient-to-r from-[#1E75D9] to-[#24B7C3] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 group text-sm"
+                        className="flex-1 py-3 bg-gradient-to-r from-[#7c3aed] to-[#a855f7] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 group text-sm"
                     >
                         Suivant
                         <Icon path={mdiArrowRight} size={0.7} className="group-hover:translate-x-1 transition-transform" />
@@ -510,7 +510,7 @@ export default function DemoForm() {
                     <button
                         type="submit"
                         disabled={loading}
-                        className={`flex-1 py-3 bg-gradient-to-r from-[#1E75D9] to-[#24B7C3] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 group text-sm
+                        className={`flex-1 py-3 bg-gradient-to-r from-[#7c3aed] to-[#a855f7] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 group text-sm
                             ${loading ? "cursor-not-allowed opacity-70" : "cursor-pointer"} 
                             ${sendDatas ? "!bg-gradient-to-r !from-green-500 !to-green-600" : ""}
                         `}

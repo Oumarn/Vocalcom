@@ -25,12 +25,12 @@ export default function ComparisonSection() {
                     <div className="max-w-5xl mx-auto overflow-x-auto">
                         <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl shadow-xl border-2 border-gray-100 overflow-hidden min-w-[600px]">
                             {/* Header */}
-                            <div className="grid grid-cols-3 gap-4 md:gap-6 p-4 md:p-6 border-b-2 border-gray-200" style={{background: 'linear-gradient(90deg, rgba(0, 191, 195, 0.1), rgba(144, 75, 153, 0.1))'}}>
+                            <div className="grid grid-cols-3 gap-4 md:gap-6 p-4 md:p-6 border-b-2 border-gray-200" style={{background: 'linear-gradient(90deg, rgba(139, 92, 246, 0.1), rgba(168, 85, 247, 0.1))'}}>
                                 <div className="text-center">
                                     <p className="text-xs md:text-sm font-semibold text-gray-600 uppercase tracking-wide">Fonctionnalité</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="inline-flex items-center justify-center px-3 md:px-4 py-1.5 md:py-2 text-white rounded-full font-bold text-xs md:text-sm shadow-lg" style={{background: 'linear-gradient(193deg, #00bfc3, #4488af 40%, #904b99)'}}>
+                                    <div className="inline-flex items-center justify-center px-3 md:px-4 py-1.5 md:py-2 text-white rounded-full font-bold text-xs md:text-sm shadow-lg" style={{background: 'linear-gradient(193deg, #7c3aed, #8b5cf6 25%, #a855f7 50%, #c084fc 75%, #d8b4fe)'}}>
                                         ⚡ Vocalcom
                                     </div>
                                 </div>
@@ -88,9 +88,9 @@ export default function ComparisonSection() {
                             </div>
 
                             {/* CTA */}
-                            <div className="p-8 text-center border-t-2 border-gray-200" style={{background: 'linear-gradient(90deg, rgba(0, 191, 195, 0.1), rgba(144, 75, 153, 0.1))'}}>
+                            <div className="p-8 text-center border-t-2 border-gray-200" style={{background: 'linear-gradient(90deg, rgba(139, 92, 246, 0.1), rgba(168, 85, 247, 0.1))'}}>
                                 <p className="text-gray-700 font-semibold mb-4">Prêt à passer à la vitesse supérieure?</p>
-                                <a href="#demo" className="inline-flex items-center gap-2 px-6 py-3 text-white font-bold rounded-full hover:shadow-xl transition-all transform hover:-translate-y-1" style={{background: 'linear-gradient(193deg, #00bfc3, #4488af 40%, #904b99)'}}>
+                                <a href="#demo" className="inline-flex items-center gap-2 px-6 py-3 text-white font-bold rounded-full hover:shadow-xl transition-all transform hover:-translate-y-1" style={{background: 'linear-gradient(193deg, #7c3aed, #8b5cf6 25%, #a855f7 50%, #c084fc 75%, #d8b4fe)'}}>
                                     Voir la Différence
                                 </a>
                             </div>

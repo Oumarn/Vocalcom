@@ -5,7 +5,7 @@ import DemoForm from '../forms/DemoForm';
 export default function HeroHome() {
     return (
         <>
-            <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden bg-gradient-to-br from-white via-cyan-50/30 to-purple-50/20">
+            <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden bg-gradient-to-br from-white via-violet-50/30 to-purple-50/20">
                 
                 {/* Image Background */}
                 <div className="absolute inset-0 overflow-hidden">
@@ -15,16 +15,16 @@ export default function HeroHome() {
                         className="absolute inset-0 w-full h-full object-cover opacity-30"
                     />
                     {/* Overlay with brand gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-100/40 via-purple-50/30 to-orange-50/20"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-violet-100/40 via-purple-50/30 to-violet-50/20"></div>
                 </div>
 
                 <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
                     <div className="space-y-8 animate-fade-up">
                         {/* Trust badge */}
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-50 to-blue-50 border border-cyan-200 shadow-lg shadow-cyan-500/20">
-                            <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 animate-pulse"></div>
-                            <span className="text-sm font-semibold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-violet-50 to-purple-50 border border-violet-200 shadow-lg shadow-violet-500/20">
+                            <div className="w-2 h-2 rounded-full bg-gradient-to-r from-violet-500 to-purple-500 animate-pulse"></div>
+                            <span className="text-sm font-semibold bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
                                 AI-first Contact Center Platform
                             </span>
                         </div>

@@ -13,15 +13,13 @@ export default function AIHumanSection() {
                         <div className="relative animate-fade-up order-2 lg:order-1">
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto">
                                 <Image 
-                                    src="/assets/AI_Agents_with_headphone.jpg" 
+                                    src="/assets/AIHumanAgent.jpg" 
                                     alt="AI Agents collaborating with humans" 
                                     width={500} 
                                     height={350}
-                                    className="w-full h-auto object-cover"
+                                    className="w-full h-auto object-contain bg-white"
                                     unoptimized
                                 />
-                                {/* Gradient overlay for brand consistency */}
-                                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 to-purple-500/10"></div>
                             </div>
                             
                             {/* Floating stats */}
@@ -40,7 +38,7 @@ export default function AIHumanSection() {
 
                         {/* Content Side */}
                         <div className="space-y-6 animate-fade-up order-1 lg:order-2">
-                            <div className="inline-flex items-center gap-2 bg-cyan-50 text-cyan-700 rounded-full px-4 py-2 text-sm font-medium">
+                            <div className="inline-flex items-center gap-2 bg-violet-50 text-violet-700 rounded-full px-4 py-2 text-sm font-medium">
                                 <Icon path={mdiHandshake} size={0.6} />
                                 Humain + IA
                             </div>
