@@ -11,9 +11,9 @@ export const landingES = {
     title: "La IA de los Centros de Contacto",
     subtitle: "Optimizada para asistir a los agentes, anticipar el churn, automatizar el upsell y el cross-sell, impulsar la venta sobre leads, gestionar los desbordes y habilitar servicios 24/7 en todos los canales.",
     stats: {
-      roi: { value: "301%", label: "de ROI en 3 años" },
-      payback: { value: "6 meses", label: "de amortización" },
-      interactions: { value: "Más de 1M", label: "de interacciones al día" },
+      roi: { value: "301 %", label: "ROI a 3 años" },
+      payback: { value: "6 meses", label: "Amortización" },
+      interactions: { value: "280 mil €", label: "de reducción de costes" },
     },
     formTitle: "Ver la demo en acción",
   },
@@ -84,8 +84,8 @@ export const landingES = {
   },
   integrations: {
     badge: "Integraciones",
-    title: "Conecta tu CRM\nen pocos clics",
-    subtitle: "Aprovecha una integración nativa con los principales CRM\npara flujos de trabajo automatizados.",
+    title: "Conecta Vocalcom\na todas tus herramientas",
+    subtitle: "CRM, CMS, e-commerce y más: conecta Vocalcom con más de 200 herramientas.",
     count: "Más de 200",
     countLabel: "integraciones disponibles"
   },

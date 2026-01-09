@@ -1,6 +1,6 @@
 export const landingFR = {
   meta: {
-    title: "Vocalcom - L'IA des Centres de contact",
+    title: "Vocalcom - Centre de contact tout-en-un propulsé par l'IA",
     description: "Plateforme AI-first de centre de contact. ROI de 301% sur 3 ans.",
   },
   header: {
@@ -8,23 +8,23 @@ export const landingFR = {
   },
   hero: {
     badge: "AI-first Contact Center Platform",
-    title: "L'IA des Centres de contact",
+    title: "Centre de contact tout-en-un propulsé par l'IA",
     subtitle: "Optimisée pour assister les agents, anticiper le churn, automatiser l'upsell et le cross-sell, booster la vente sur leads, gérer les débordements et ouvrir les services 24/7 sur tous les canaux.",
     stats: {
       roi: { value: "301%", label: "ROI sur 3 ans" },
       payback: { value: "6 mois", label: "Amortissement" },
-      interactions: { value: "1M+", label: "Interactions/jour" },
+      interactions: { value: "280k€", label: "de réduction de coûts" },
     },
     formTitle: "Voir la Démo en Action",
   },
   logoBillboard: {
     badge: "Trusted by Industry Leaders",
-    title: "Ils nous font confiance",
+    title: "Nos clients parlent pour nous",
   },
   aiHuman: {
     badge: "Humain + IA",
-    title: "Des agents IA au service de l'humain",
-    description: "La plateforme de centre de contact AI-first de Vocalcom donne du pouvoir aux équipes, leur permettant de se concentrer sur les cas complexes, les conversations à valeur ajoutée et les résultats clients significatifs.",
+    title: "Ensemble, Agents humains et IA façonnent la réussite client",
+    description: "Créez des expériences plus connectées et plus percutantes grâce à une plateforme basée sur l'IA, pour chaque client, chaque interaction, à chaque fois, quelque soit le canal.",
     roiStat: { value: "301%", label: "ROI sur 3 ans" },
     features: [
       {
@@ -43,12 +43,12 @@ export const landingFR = {
   },
   benefits: {
     badge: "Une plateforme unifiée, des possibilités infinies",
-    title: "Du basique à l'innovation IA de pointe",
+    title: "Des fonctionnalités basiques à l'innovation IA de pointe",
     subtitle: "Vocalcom réunit tout ce dont vous avez besoin dans une plateforme unique : agents IA, humains, et tous vos canaux pour une CX plus rapide et humaine.",
     items: [
       {
-        title: "Agents IA Nouvelle Génération",
-        description: "Conversations naturelles de bout en bout sur voix, chat, SMS, email et apps – résolution des demandes avec rapidité et précision inégalées.",
+        title: "Agents IA Autonomes",
+        description: "L'IA gère les demandes 24/7, sur le téléphone, le chat, WhatsApp ou les emails, et passe la main quand ça devient plus complexe. Une approche pragmatique de l'IA : utile, concrète, orientée business.",
         stat: "Des millions d'interactions/jour"
       },
       {
@@ -59,12 +59,12 @@ export const landingFR = {
       {
         title: "Évolutivité Sans Effort",
         description: "Gérez les débordements et ouvrez 24/7 sur tous les canaux avec plus d'empathie et d'impact, moins d'effort.",
-        stat: "∞ scalabilité"
+        stat: "Scalable & Robuste"
       },
       {
         title: "Plateforme AI-First",
         description: "Unifiez chaque canal, client et agent dans une plateforme unique conçue pour évoluer avec vous.",
-        stat: "1 plateforme, tout inclus"
+        stat: "Une plateforme tout-en-un"
       }
     ],
     features: [
@@ -84,8 +84,8 @@ export const landingFR = {
   },
   integrations: {
     badge: "Intégrations",
-    title: "Connectez votre CRM\nen quelques clics",
-    subtitle: "Bénéficiez d'une intégration native avec les principaux CRM\npour des workflows automatisés.",
+    title: "Connectez Vocalcom\nà tous vos outils",
+    subtitle: "CRM, CMS, e-commerce et bien plus : connectez Vocalcom à plus de 200 outils.",
     count: "+200",
     countLabel: "intégrations disponibles"
   },

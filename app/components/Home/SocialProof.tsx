@@ -31,7 +31,7 @@ export default function SocialProof({ content }: { content: typeof landingFR.soc
                             <Icon path={mdiTrendingUp} size={0.6} />
                             {content.title}
                         </div>
-                        <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-4">{content.subtitle}</h2>
+                        <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 mb-4">{content.subtitle}</h2>
                         <p className="text-lg text-gray-600">{content.description}</p>
                     </div>
 

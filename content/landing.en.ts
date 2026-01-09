@@ -8,12 +8,12 @@ export const landingEN = {
   },
   hero: {
     badge: "AI-first Contact Center Platform",
-    title: "The AI for Contact Centers",
+    title: "All-in-one AI-powered contact center",
     subtitle: "Optimized to assist agents, anticipate churn, automate upsell and cross-sell, boost sales from leads, manage overflows, and open 24/7 services across all channels.",
     stats: {
       roi: { value: "301%", label: "3-Year ROI" },
       payback: { value: "6 months", label: "Payback Period" },
-      interactions: { value: "1M+", label: "Interactions/day" },
+      interactions: { value: "€280k", label: "in cost reduction" },
     },
     formTitle: "See the Demo in Action",
   },
@@ -84,8 +84,8 @@ export const landingEN = {
   },
   integrations: {
     badge: "Integrations",
-    title: "Connect your CRM\nin a few clicks",
-    subtitle: "Benefit from native integration with major CRMs\nfor automated workflows.",
+    title: "Connect Vocalcom\nto all your tools",
+    subtitle: "CRM, CMS, e-commerce, and more: connect Vocalcom to over 200 tools.",
     count: "+200",
     countLabel: "integrations available"
   },

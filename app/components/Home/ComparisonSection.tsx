@@ -30,8 +30,14 @@ export default function ComparisonSection({ content }: { content: ComparisonCont
                         <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-50 to-orange-50 text-purple-700 rounded-full px-5 py-2.5 text-sm font-bold mb-6 border border-purple-200">
                             <span>{content.badge}</span>
                         </div>
-                        <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-4">
-                            {content.title}
+                        <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 mb-4">
+                            {content.title.split(' ').map((word, i) => 
+                                word.toLowerCase() === 'vs' ? (
+                                    <span key={i} className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-purple-600"> {word} </span>
+                                ) : (
+                                    <span key={i}>{i > 0 ? ' ' : ''}{word}</span>
+                                )
+                            )}
                         </h2>
                         <p className="text-lg text-gray-600 mb-3">
                             {content.subtitle}

@@ -44,7 +44,7 @@ export default function AIHumanSection({ content }: { content: typeof landingFR.
                                 {content.badge}
                             </div>
                             
-                            <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 leading-tight">
+                            <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
                                 {content.title}
                             </h2>
                             
