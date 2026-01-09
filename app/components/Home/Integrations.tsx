@@ -28,7 +28,7 @@ export default function Integrations({ content }: { content: typeof landingFR.in
                 </div>
 
                 {/* Integration logos grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-16 max-w-sm sm:max-w-none mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-16 max-w-md md:max-w-none mx-auto">
                     {integrations.map((integration, index) => (
                         <div
                             key={index}
